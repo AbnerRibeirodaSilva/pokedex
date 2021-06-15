@@ -8,10 +8,10 @@ import 'package:pokedex_manha/widgets/horizontal_bar.dart';
 import 'package:pokedex_manha/widgets/poke_type_chip.dart';
 
 class DetailPage extends StatefulWidget {
-  final PokemonModel pokemon;
+  final PokemonModel? pokemon;
 
   const DetailPage({
-    Key key,
+    Key? key,
     this.pokemon,
   }) : super(key: key);
 
@@ -31,12 +31,12 @@ class _DetailPageState extends State<DetailPage> {
   AppBar _buildAppBar() {
     return AppBar(
       title: Text(
-        widget.pokemon.name,
+        widget.pokemon!.name!,
         style: TextStyle(color: Colors.black),
       ),
       centerTitle: true,
       elevation: 0.0,
-      backgroundColor: PokeHelper.getColor(widget.pokemon.type1),
+      backgroundColor: PokeHelper.getColor(widget.pokemon!.type1!),
       iconTheme: IconThemeData(color: Colors.black),
       actions: [
         Container(
@@ -44,7 +44,7 @@ class _DetailPageState extends State<DetailPage> {
           width: 80,
           child: Center(
             child: Text(
-              '#${widget.pokemon.id.toString().padLeft(4, '0')}',
+              '#${widget.pokemon!.id.toString().padLeft(4, '0')}',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,
@@ -61,8 +61,8 @@ class _DetailPageState extends State<DetailPage> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         PokeHeader(
-          backgroundColor: PokeHelper.getColor(widget.pokemon.type1),
-          imageUrl: widget.pokemon.imageUrl,
+          backgroundColor: PokeHelper.getColor(widget.pokemon!.type1!),
+          imageUrl: widget.pokemon!.imageUrl,
         ),
         _buildTypes(),
         _showAbilitys(),
@@ -87,23 +87,23 @@ class _DetailPageState extends State<DetailPage> {
           ),
           HorizontalBar(
             label: 'HP',
-            currentValue: widget.pokemon.health,
-            foregroundColor: PokeHelper.getColor(widget.pokemon.type1),
+            currentValue: widget.pokemon!.health,
+            foregroundColor: PokeHelper.getColor(widget.pokemon!.type1!),
           ),
           HorizontalBar(
             label: 'ATK',
-            currentValue: widget.pokemon.attack,
-            foregroundColor: PokeHelper.getColor(widget.pokemon.type1),
+            currentValue: widget.pokemon!.attack,
+            foregroundColor: PokeHelper.getColor(widget.pokemon!.type1!),
           ),
           HorizontalBar(
             label: 'DEF',
-            currentValue: widget.pokemon.defense,
-            foregroundColor: PokeHelper.getColor(widget.pokemon.type1),
+            currentValue: widget.pokemon!.defense,
+            foregroundColor: PokeHelper.getColor(widget.pokemon!.type1!),
           ),
           HorizontalBar(
             label: 'SPD',
-            currentValue: widget.pokemon.speed,
-            foregroundColor: PokeHelper.getColor(widget.pokemon.type1),
+            currentValue: widget.pokemon!.speed,
+            foregroundColor: PokeHelper.getColor(widget.pokemon!.type1!),
           ),
         ],
       ),
@@ -116,10 +116,10 @@ class _DetailPageState extends State<DetailPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          PokeTypeChip(type: widget.pokemon.type1),
-          widget.pokemon.type2 != null ? SizedBox(width: 20) : SizedBox(),
-          widget.pokemon.type2 != null
-              ? PokeTypeChip(type: widget.pokemon.type2)
+          PokeTypeChip(type: widget.pokemon!.type1),
+          widget.pokemon!.type2 != null ? SizedBox(width: 20) : SizedBox(),
+          widget.pokemon!.type2 != null
+              ? PokeTypeChip(type: widget.pokemon!.type2)
               : SizedBox(),
         ],
       ),
@@ -132,14 +132,14 @@ class _DetailPageState extends State<DetailPage> {
       children: [
         Expanded(
           child: MetricTile(
-            value: widget.pokemon.weight / 10,
+            value: widget.pokemon!.weight! / 10,
             unit: 'kg',
             label: 'Peso',
           ),
         ),
         Expanded(
           child: MetricTile(
-            value: widget.pokemon.height / 10,
+            value: widget.pokemon!.height! / 10,
             unit: 'm',
             label: 'Altura',
           ),
@@ -155,11 +155,11 @@ class _DetailPageState extends State<DetailPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           AbilityType(
-            ability: widget.pokemon.ability1,
+            ability: widget.pokemon!.ability1,
           ),
           Expanded(child: Icon(Icons.catching_pokemon)),
           AbilityType(
-            ability: widget.pokemon.ability2,
+            ability: widget.pokemon!.ability2,
           )
         ],
       ),

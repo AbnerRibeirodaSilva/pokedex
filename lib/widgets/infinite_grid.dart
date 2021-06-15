@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class InfiniteGrid extends StatefulWidget {
   final int crossAxisCount;
-  final int itemCount;
-  final Widget Function(BuildContext, int) itemBuilder;
+  final int? itemCount;
+  final Widget Function(BuildContext, int)? itemBuilder;
   final bool loading;
-  final bool hasNext;
-  final Function() nextData;
+  final bool? hasNext;
+  final Function()? nextData;
   final String emptyText;
   final EdgeInsets padding;
 
   const InfiniteGrid({
-    Key key,
+    Key? key,
     this.itemCount,
     this.itemBuilder,
     this.hasNext,
@@ -34,7 +34,7 @@ class _InfiniteGridState extends State<InfiniteGrid> {
     }
 
     if (widget.itemCount == 0) {
-      return Center(child: Text(widget.emptyText ?? ''));
+      return Center(child: Text(widget.emptyText));
     }
 
     return SingleChildScrollView(
@@ -57,7 +57,7 @@ class _InfiniteGridState extends State<InfiniteGrid> {
         crossAxisCount: widget.crossAxisCount,
       ),
       itemCount: widget.itemCount,
-      itemBuilder: widget.itemBuilder,
+      itemBuilder: widget.itemBuilder!,
     );
   }
 

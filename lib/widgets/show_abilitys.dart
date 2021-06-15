@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pokedex_manha/models/pokemon_model.dart';
 
 class AbilityType extends StatelessWidget {
-  final PokemonModel pokemon;
-  final String ability;
-  final String type;
+  final PokemonModel? pokemon;
+  final String? ability;
+  final String? type;
 
   const AbilityType({
-    Key key,
+    Key? key,
     this.ability,
     this.pokemon,
     this.type,
@@ -17,7 +17,7 @@ class AbilityType extends StatelessWidget {
   Widget build(BuildContext context) {
     return Chip(
       label: Text(
-        ability,
+        ability!,
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,

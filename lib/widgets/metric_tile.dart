@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class MetricTile extends StatelessWidget {
-  final String label;
-  final String unit;
-  final num value;
+  final String? label;
+  final String? unit;
+  final num? value;
 
   const MetricTile({
-    Key key,
+    Key? key,
     this.label,
     this.unit,
     this.value,
@@ -27,7 +27,7 @@ class MetricTile extends StatelessWidget {
             ),
           ),
           SizedBox(height: 4.0),
-          Text(label),
+          Text(label!),
         ],
       ),
     );

@@ -1,17 +1,17 @@
 class PokemonModel {
-  final int id;
-  final String name;
-  final int height;
-  final int weight;
-  final String imageUrl;
-  final String type1;
-  final String type2;
-  final int health;
-  final int attack;
-  final int defense;
-  final int speed;
-  final String ability1;
-  final String ability2;
+  final int? id;
+  final String? name;
+  final int? height;
+  final int? weight;
+  final String? imageUrl;
+  final String? type1;
+  final String? type2;
+  final int? health;
+  final int? attack;
+  final int? defense;
+  final int? speed;
+  final String? ability1;
+  final String? ability2;
 
   const PokemonModel({
     this.id,

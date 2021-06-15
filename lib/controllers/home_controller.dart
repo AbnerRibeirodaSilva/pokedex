@@ -11,7 +11,7 @@ class HomeController {
 
   int _limit = 20;
 
-  Failure failure;
+  Failure? failure;
 
   List<PokemonModel> pokemons = <PokemonModel>[];
 

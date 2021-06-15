@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class PokeHeader extends StatelessWidget {
-  final String imageUrl;
-  final Color backgroundColor;
+  final String? imageUrl;
+  final Color? backgroundColor;
   final double radius;
 
   const PokeHeader({
-    Key key,
+    Key? key,
     this.imageUrl,
     this.backgroundColor,
     this.radius = 40.0,
@@ -37,7 +37,7 @@ class PokeHeader extends StatelessWidget {
             height: size.width * 0.5,
             width: size.width,
             child: Image.network(
-              imageUrl,
+              imageUrl!,
               fit: BoxFit.fitHeight,
             ),
           ),
